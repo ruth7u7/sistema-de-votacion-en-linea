@@ -84,6 +84,17 @@ public class EncuestaBean implements Serializable {
         return "/admin/encuestas?faces-redirect=true";
     }
 
+    public void inicializar() {
+        if (encuestaId != null) {
+            cargarEncuesta();
+        } else {
+            encuestaActual = new Encuesta();
+            opcionesTexto = nuevasOpcionesVacias();
+            categoriaSeleccionadaId = null;
+            limpiarMensajes();
+        }
+    }
+
     public void cargarEncuesta() {
         if (encuestaId == null) {
             return;

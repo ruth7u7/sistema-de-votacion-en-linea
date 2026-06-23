@@ -393,6 +393,21 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
+.votos-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EEF2FF;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    min-width: 2rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+
 /* Prevenir envoltura de texto en botones de PrimeFaces */
 .ui-button, .ui-button-text, .ui-button-text-icon-left, .ui-button-text-only {
     white-space: nowrap !important;

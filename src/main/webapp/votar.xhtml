@@ -163,18 +163,19 @@
                                 </p:column>
 
                                 <p:column headerText="Votos" style="width: 15%; text-align: center;">
-                                    <p:badge value="#{entry.value}" style="background-color: var(--primary); color: white; font-size: 0.9rem; padding: 0.35rem 0.6rem;"/>
+                                    <span class="votos-badge">#{entry.value}</span>
                                 </p:column>
 
                                 <p:column headerText="Porcentaje" style="width: 35%">
-                                    <div style="display: flex; align-items: center; gap: 0.50rem;">
-                                        <div class="progress-bar" style="flex-grow: 1;">
-                                            <div class="progress-fill" style="width: #{votacionBean.obtenerPorcentaje(entry.value, votacionBean.totalVotos)}%;">
-                                                <h:outputText value="#{votacionBean.obtenerPorcentaje(entry.value, votacionBean.totalVotos)}">
-                                                    <f:convertNumber pattern="0.0"/>
-                                                </h:outputText>%
-                                            </div>
+                                    <div style="display: flex; align-items: center; gap: 0.75rem; width: 100%;">
+                                        <div class="progress-bar-container" style="flex-grow: 1; background-color: #E2E8F0; height: 8px; border-radius: 9999px; overflow: hidden;">
+                                            <div class="progress-bar-fill" style="background-color: var(--primary); height: 100%; width: #{votacionBean.obtenerPorcentaje(entry.value, votacionBean.totalVotos)}%; border-radius: 9999px;"/>
                                         </div>
+                                        <span style="font-weight: 700; color: var(--text-main); min-width: 3.5rem; text-align: right; white-space: nowrap;">
+                                            <h:outputText value="#{votacionBean.obtenerPorcentaje(entry.value, votacionBean.totalVotos)}">
+                                                <f:convertNumber pattern="0.0"/>
+                                            </h:outputText>%
+                                        </span>
                                     </div>
                                 </p:column>
                             </p:dataTable>
